@@ -6,13 +6,11 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 import moment from 'moment-timezone';
-// Set timezone to UTC.
 moment.tz.setDefault('UTC');
+
 // Create moment object to use in any component.
 Object.defineProperty(Vue.prototype, '$moment', {
-  get() {
-    return this.$root.moment
-  }
+  get() { return this.$root.moment }
 });
 
 // Vuex store file.

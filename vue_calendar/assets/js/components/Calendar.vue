@@ -123,7 +123,7 @@ export default {
 
 <style lang="scss">
 /* Variable styles */
-$border-color: rgba(129, 54, 56, .5);
+$border-color: rgba(65, 113, 125, 1);
 $day-border: 1px solid $border-color;
 $padding-days: rgba(172, 252, 172, 1);
 $today: rgba(218, 193, 231, 1);
@@ -151,7 +151,7 @@ $active: rgba(222, 6, 6, 1);
   letter-spacing: .1em;
   text-shadow: -1px -1px 1px #111,
   2px 2px 1px #363636;
-  background-color: rgba(77, 18, 18, 1);
+  background-color: rgba(48, 48, 48, 1);
   -webkit-box-shadow: 0px 0px 9px 3px rgba(41,41,41,.25);
   -moz-box-shadow: 0px 0px 9px 3px rgba(41,41,41,.25);
   box-shadow: 0px 0px 9px 3px rgba(41,41,41,.25);
@@ -169,8 +169,9 @@ $active: rgba(222, 6, 6, 1);
       width: 20px;
       padding: 0px;
       font-size: 1rem;
-      color: #aeb8ae;
+      color: rgb(151, 152, 151);
       background-color: #4c4a4a;
+      border-color: rgba(65, 113, 125, 1);
       user-select: none;
       box-shadow: -1px -1px 1px #111,
       2px 2px 1px #363636;
@@ -181,7 +182,7 @@ $active: rgba(222, 6, 6, 1);
         outline: none;
       }
       &:hover {
-        box-shadow: 0 1px 2px #9ea89e;
+        box-shadow: 0 1px 2px rgba(65, 113, 125, 1);
       }
     }
   }
@@ -201,8 +202,10 @@ $active: rgba(222, 6, 6, 1);
 
 /* List of days above calendar. */
 #days-bar {
-  background-color: #805757;
+  background-color: rgba(33, 33, 33, 1);
+  color: rgb(151, 152, 151);
   @include calendar-row;
+
   div {
     @include calendar-cell;
   }
@@ -210,7 +213,8 @@ $active: rgba(222, 6, 6, 1);
 
 /* Calendar */
 #calendar {
-  background-color: #9ea89e;
+  background-color: rgba(48, 48, 48, .9);
+  color: rgb(151, 152, 151);
 
 /* Week in Calendar */
   .calendar-week {
@@ -232,6 +236,7 @@ $active: rgba(222, 6, 6, 1);
           padding-left: 0;
           margin: 0;
           margin-top: 5px;
+          color: rgba(222, 222, 222, 0.9);
         }
 
 /* Last day in each week */
@@ -241,7 +246,7 @@ $active: rgba(222, 6, 6, 1);
 
 /* Past days */
       &.past {
-        opacity: 0.6;
+        opacity: 0.85;
       }
 
 /* Padding days for previous and next month */
@@ -251,7 +256,7 @@ $active: rgba(222, 6, 6, 1);
 
 /* Current day */
       &.today {
-        background-color: rgba(245, 97, 97, .2);
+        background-color: rgba(65, 113, 125, .3);
       }
 /* Active selected day. */
       &.active {

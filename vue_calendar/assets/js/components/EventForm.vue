@@ -4,7 +4,7 @@
     <p>{{ date.format('dddd, MMM Do') }}</p>
     <div class="text">
       <input type="text" v-focus v-model="description" placeholder="Lunch at Steve's" @keyup.enter="create" />
-      <button @click="create">Create</button>
+      <button id="create-button" @click="create">Create</button>
     </div>
     <button id="close-button" @click="close">&#10005;</button>
   </div>
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: "EventForm",
+  name: 'EventForm',
   data() {
     return {
       description: ""
@@ -22,7 +22,7 @@ export default {
   methods: {
     // Close button method for event form.
     close() {
-      this.$store.commit("eventFormActive", false);
+      this.$store.commit('eventFormActive', false);
     },
     // Commit description to Vuex store if length is greater than 0.
     create() {
@@ -66,6 +66,7 @@ export default {
 
 <style lang='scss'>
 #event-form {
+  color: rgb(174, 183, 174);
   display: none;
   box-shadow: 0 2px 4px #000000;
   position: fixed;
@@ -73,17 +74,18 @@ export default {
   transform: translate(-50%, -100%);
   z-index: 10;
   padding: 1rem;
-  background-color: white;
-  border: .2px #813638 solid;
+  background-color: rgb(48, 48, 48);
+  border: .2px rgba(65, 113, 125, 1) solid;
+  flex-direction: column;
+  align-content: space-between;
 
   &.active {
     display: flex;
   }
 
-  flex-direction: column;
-  align-content: space-between;
-
   #close-button {
+    color: #426974;
+    background-color: rgb(68, 68, 68);
     margin: 0;
     padding: 0;
     position: absolute;
@@ -92,9 +94,15 @@ export default {
     height: 20px;
     right: 0.6rem;
     top: 0.6rem;
+
     &:focus {
       outline: none;
     }
+  }
+
+  #create-button {
+    color: rgb(174, 184, 174);
+    background-color: rgb(48, 48, 48);
   }
 }
 </style>

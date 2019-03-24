@@ -18,7 +18,7 @@ TARGETS := $(THIS_DIR)/dist/main.bundle.*
 
 .PHONY: all dev build deploy clean distclean watch
 
-all: clean build
+all: clean build dev
 
 dev: $(PKG_DIR)
 	@echo "Running webpack-dev-server at localhost:8080..."
@@ -30,7 +30,7 @@ build: $(PKG_DIR)
 
 deploy: $(PKG_DIR)
 	@echo "Building bundled assets in production mode and deploying to google cloud..."
-	@$(WEBPACK) --mode production --progress & gcloud app deploy
+	@$(WEBPACK) --mode production --progress && gcloud app deploy
 
 clean:
 	@echo "Cleaning bundled assets..."

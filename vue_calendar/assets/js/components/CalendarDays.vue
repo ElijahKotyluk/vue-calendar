@@ -9,29 +9,24 @@
 
 <script>
 export default {
-  name: "CalendarDays",
-  props: ["day"],
-  data () {
-    return {
-    }
-  },
+  name: 'CalendarDays',
+  props: ['day'],
   computed: {
     events() {
       // Return filtered list of events to match the day they were created.
       return this.$store.state.events.filter(event =>
-        event.date.isSame(this.day, "day")
+        event.date.isSame(this.day, 'day')
       );
     },
     classObject() {
       let eventFormDate = this.$store.state.eventFormDate;
       let eventFormActive = this.$store.state.eventFormActive;
-      let today = this.day.isSame(this.$moment(), "day");
+      let today = this.day.isSame(this.$moment(), 'day');
 
       return {
         day: true,
         today,
-        // Days that have occured prior to today.
-        past: this.day.isSameOrBefore(this.$moment(), "day") && !today,
+        past: this.day.isSameOrBefore(this.$moment(), 'day') && !today,
         active: eventFormDate.isSame(this.day, 'day') && eventFormActive
       };
     }
