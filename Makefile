@@ -8,19 +8,29 @@ SHELL := /bin/bash
 # vars
 THIS_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 PKG_DIR := $(THIS_DIR)/node_modules
+BUNDLE_DIR := $(THIS_DIR)/dist
 
 YARN := $(shell command -v yarn 2> /dev/null)
 WEBPACK := $(PKG_DIR)/.bin/webpack
+WEBPACK_DEV := $(PKG_DIR)/.bin/webpack-dev-server
 
 TARGETS := $(THIS_DIR)/dist/main.bundle.*
 
-.PHONY: all build clean distclean watch
+.PHONY: all dev build deploy clean distclean watch
 
 all: clean build
 
+dev: $(PKG_DIR)
+	@echo "Running webpack-dev-server at localhost:8080..."
+	@$(WEBPACK_DEV) --mode development --progress --open
+
 build: $(PKG_DIR)
-	@echo "Building bundled assets..."
-	@$(WEBPACK)
+	@echo "Building bundled assets in development mode..."
+	@$(WEBPACK) --mode development --progress
+
+deploy: $(PKG_DIR)
+	@echo "Building bundled assets in production mode and deploying to google cloud..."
+	@$(WEBPACK) --mode production --progress & gcloud app deploy
 
 clean:
 	@echo "Cleaning bundled assets..."
