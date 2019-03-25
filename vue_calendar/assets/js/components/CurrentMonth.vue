@@ -32,7 +32,7 @@ export default {
       } else {
         this.$store.commit('setCurrentMonth', this.month + 1);
       }
-      // Change eventFormActive state to true when increment is pressed.
+      // Change eventFormActive state to false when increment is pressed.
       this.$store.commit('eventFormActive', false);
     }
   },
@@ -54,6 +54,65 @@ export default {
 </script>
 
 <style lang='scss'>
+/* Header */
+#header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: #aeb8ae;
+  letter-spacing: .1em;
+  text-shadow: -1px -1px 1px #111,
+  2px 2px 1px #363636;
+  background-color: rgba(48, 48, 48, 1);
+  -webkit-box-shadow: 0px 0px 9px 3px rgba(41,41,41,.25);
+  -moz-box-shadow: 0px 0px 9px 3px rgba(41,41,41,.25);
+  box-shadow: 0px 0px 9px 3px rgba(41,41,41,.25);
+
+  div:first-child {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1rem 0;
+  }
+
+  div:last-child {
+    button {
+      height: 20px;
+      width: 20px;
+      padding: 0px;
+      font-size: 1rem;
+      color: rgb(151, 152, 151);
+      background-color: #4c4a4a;
+      border-color: rgba(65, 113, 125, 1);
+      user-select: none;
+      box-shadow: -1px -1px 1px #111,
+      2px 2px 1px #363636;
+      border-radius: 2px;
+      text-align: center;
+      line-height: 5px;
+      &:focus {
+        outline: none;
+      }
+      &:hover {
+        box-shadow: 0 1px 2px rgba(65, 113, 125, 1);
+      }
+    }
+  }
+
+  div.header-title {
+    margin-left: 1rem;
+  }
+
+  div.header-month {
+    margin: 0px 10px;
+  }
+
+  div.month-selector {
+    margin-right: 1.35rem;
+  }
+}
+
 .header-month {
   font-size: 1.35rem;
 }

@@ -65,33 +65,34 @@ export default {
 
 
 <style lang='scss'>
+
 #event-form {
-  color: rgb(174, 183, 174);
-  display: none;
-  box-shadow: 0 2px 4px #000000;
-  position: fixed;
-  width: 300px;
-  transform: translate(-50%, -100%);
-  z-index: 10;
-  padding: 1rem;
+  align-content: space-between;
   background-color: rgb(48, 48, 48);
   border: .2px rgba(65, 113, 125, 1) solid;
+  box-shadow: 0 2px 4px #000000;
+  color: rgb(174, 183, 174);
+  display: none;
   flex-direction: column;
-  align-content: space-between;
+  padding: 1rem;
+  position: fixed;
+  transform: translate(-50%, -100%);
+  width: 300px;
+  z-index: 10;
 
   &.active {
     display: flex;
   }
 
   #close-button {
-    color: #426974;
     background-color: rgb(68, 68, 68);
+    border: none;
+    color: rgb(96, 157, 175);
+    position: absolute;
     margin: 0;
     padding: 0;
-    position: absolute;
-    border: none;
-    width: 20px;
     height: 20px;
+    width: 20px;
     right: 0.6rem;
     top: 0.6rem;
 

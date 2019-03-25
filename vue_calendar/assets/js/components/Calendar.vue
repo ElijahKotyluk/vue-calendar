@@ -125,9 +125,6 @@ export default {
 /* Variable styles */
 $border-color: rgba(65, 113, 125, 1);
 $day-border: 1px solid $border-color;
-$padding-days: rgba(172, 252, 172, 1);
-$today: rgba(218, 193, 231, 1);
-$active: rgba(222, 6, 6, 1);
 
 /* Mixins */
 @mixin calendar-row() {
@@ -139,65 +136,6 @@ $active: rgba(222, 6, 6, 1);
 @mixin calendar-cell() {
   width: 100%;
   padding: 0.5rem;
-}
-
-/* Header */
-#header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
-  color: #aeb8ae;
-  letter-spacing: .1em;
-  text-shadow: -1px -1px 1px #111,
-  2px 2px 1px #363636;
-  background-color: rgba(48, 48, 48, 1);
-  -webkit-box-shadow: 0px 0px 9px 3px rgba(41,41,41,.25);
-  -moz-box-shadow: 0px 0px 9px 3px rgba(41,41,41,.25);
-  box-shadow: 0px 0px 9px 3px rgba(41,41,41,.25);
-
-  div:first-child {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 1rem 0;
-  }
-
-  div:last-child {
-    button {
-      height: 20px;
-      width: 20px;
-      padding: 0px;
-      font-size: 1rem;
-      color: rgb(151, 152, 151);
-      background-color: #4c4a4a;
-      border-color: rgba(65, 113, 125, 1);
-      user-select: none;
-      box-shadow: -1px -1px 1px #111,
-      2px 2px 1px #363636;
-      border-radius: 2px;
-      text-align: center;
-      line-height: 5px;
-      &:focus {
-        outline: none;
-      }
-      &:hover {
-        box-shadow: 0 1px 2px rgba(65, 113, 125, 1);
-      }
-    }
-  }
-
-  div.header-title {
-    margin-left: 1rem;
-  }
-
-  div.header-month {
-    margin: 0px 10px;
-  }
-
-  div.month-selector {
-    margin-right: 1.35rem;
-  }
 }
 
 /* List of days above calendar. */
@@ -251,7 +189,7 @@ $active: rgba(222, 6, 6, 1);
 
 /* Padding days for previous and next month */
       &.not-current-month {
-        background-color: $padding-days;
+        background-color: rgb(0, 0, 0);
       }
 
 /* Current day */
