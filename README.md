@@ -1,6 +1,6 @@
 # vue-calendar
 
-This is a static version of my vue-flask-calendar project, made for the purpose of deploying and posting the link on my portfolio.
+This is a static version of my [vue-flask-calendar](https://github.com/ElijahKotyluk/vue-flask-calendar) project, made for the purpose of deploying and posting the link on my portfolio.
 Instead of Flask/Vuex to create events on the calendar, I am using purely Vuex.
 
 ## file structure
@@ -82,3 +82,7 @@ Filenames denoted with an asterisk `*` are auto generated and should not be modi
 ### to run subsequent times
 
 1. `make`
+
+
+### Future plans:
+Add local storage
