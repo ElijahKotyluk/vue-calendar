@@ -6,7 +6,7 @@ Instead of Flask/Vuex to create events on the calendar, I am using purely Vuex.
 ## file structure
 
 ```
-vue-moment-calendar/
+vue-calendar/
   ├── *dist/
   ├── *node_modules/
   ├── vue_calendar/
