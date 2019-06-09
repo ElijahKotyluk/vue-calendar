@@ -1,8 +1,10 @@
 <template>
   <div class="month-selector">
-    <button @click="decrement">&#8606;</button>
+    <button @click="decrement"
+            @keyup.left="decrement()">&#8606;</button>
     <div class="header-month">{{ formattedDate }}</div>
-    <button @click="increment">&#8608;</button>
+    <button @click="increment"
+            @keyup.right="increment()">&#8608;</button>
 </div>
 </template>
 
